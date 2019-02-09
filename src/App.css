@@ -30,3 +30,9 @@
     transform: rotate(360deg);
   }
 }
+/* nav */
+.side-nav {
+  min-height: 100%;
+  border-right:1px solid #000;
+  /* background: red; */
+}
