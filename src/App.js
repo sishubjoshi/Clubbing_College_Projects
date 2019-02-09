@@ -7,12 +7,12 @@ import './App.css';
 class App extends Component {
 
   state={
-    isAuthenticated:false,
-    ClientID:"2834dbab917cc03003db",
-    ClientSecret:"662918a0101fbada0c41725f4403bb885b55c2cf"
+    isAuthenticated:false
   }
-  
+
   render() {
+
+
     return (
       <div className="App">
           {/* <User /> */}
