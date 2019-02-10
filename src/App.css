@@ -32,7 +32,34 @@
 }
 /* nav */
 .side-nav {
+  padding-top:70px;
   min-height: 100%;
   border-right:1px solid #000;
   /* background: red; */
+}
+#heading {
+  text-align: left;
+  font-weight: 600;
+  padding: 5px;
+}
+#post {
+  text-align:justify;
+}
+small {
+  display: block;
+  float:right;
+  align-content: flex-end;
+  /* background: red; */
+}
+.post-store {
+  padding-top:70px;
+}
+.post-ccp {
+  /* padding-top:100px; */
+  width: 70%;
+  margin:6px auto 1px auto ;
+}
+
+nav {
+  margin-bottom: 70px;
 }

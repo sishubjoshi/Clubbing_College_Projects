@@ -5,11 +5,11 @@ export default function Sidenav() {
     <div>
       <ul className="navbar-nav mt-4 side-menu">
                         <li className="nav-items p-2">
-                            <Link to="/dashboard">posts</Link>
+                            <Link to="/posts">posts</Link>
                         </li>
-                        <li className="nav-items p-2"><Link to="/Posts">my posts</Link></li>
-                        <li className="nav-items p-2"><Link to="/Myposts">profile</Link></li>
-                        <li className="nav-items p-2"><Link to="/Profile">logout</Link></li>
+                        <li className="nav-items p-2" ><Link to="/myposts">my posts</Link></li>
+                        <li className="nav-items p-2"><Link to="/profile">profile</Link></li>
+                        <li className="nav-items p-2"><Link to="/profile">logout</Link></li>
                     </ul>
     </div>
   )

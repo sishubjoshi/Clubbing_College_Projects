@@ -6,7 +6,9 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import firebase from "firebase";
 
 import './App.css';
-
+import Posts from './components/Posts';
+import Myposts from './components/Myposts';
+import Profile from './components/Profile';
 class App extends Component {
 
 
@@ -39,7 +41,6 @@ class App extends Component {
       console.log(user);
 
       this.setState({token,user,isAuthenticated:true});
-      <Redirect to="dashboard"/>
       // ...
     })
     .catch(function(error) {
@@ -57,27 +58,36 @@ class App extends Component {
 
   unauthenticate(e){
     e.preventDefault();
+    let isAuthenticated;
     firebase.auth().signOut().then(function() {
-      this.setState({name:'',token:'',isAuthenticated:false});
+      isAuthenticated=false;
       alert("Signed Out Successful");
+      // this.setState({isAuthenticated});
     }).catch(function(error) {
       alert(error)
     });
   }
 
-  
+
   render() {
     return (
       <div className="App">
-        <Navbar />
-        <h1>GitHub Authentication</h1>
-        <button type="submit" onClick={(e)=> this.authenticate(e)}>LogIn</button>
-        <button type="submit" onClick={(e)=>{this.unauthenticate(e)}}>LogOut</button>
+      <nav className="navbar bg-dark fixed-top ">
+        <a href="/" className="navbar-brand text-warning" width="100%">CCP</a>
+        <div className="right">
+        <button type="submit" className="btn btn-warning m-1" onClick={(e)=> this.authenticate(e)}>LogIn</button>
+        <button type="submit" className="btn btn-warning m-1" onClick={(e)=>{this.unauthenticate(e)}}>LogOut</button>
+        </div>
+      </nav>
+        
 
       <Switch>
-        {/* <Route exact path='/' component={Auth}/> */}
-        <Route path='/dashboard/:id' component={User} />
+        <Route path='/posts' component={Posts}/>
+         <Route path='/dashboard/' component={Posts} />
+         <Route path='/myposts/' component={Myposts} />
+         <Route path='/profile/' component={Profile} />
       </Switch>
+      {this.state.isAuthenticated?(<Route exact path='/' component={User}/>):('')}
           
       </div>
     );
