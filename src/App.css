@@ -37,6 +37,17 @@
   border-right:1px solid #000;
   /* background: red; */
 }
+.slist:hover
+{
+color:#680808;
+background-color: aquamarine;
+transition: 0.7s;
+}
+.slist:focus
+{
+  color: blue;
+  background-color: cadetblue;
+}
 #heading {
   text-align: left;
   font-weight: 600;
